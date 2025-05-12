@@ -1,0 +1,112 @@
+/* Base styles */
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9fb;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  /* Header */
+  .site-header {
+    background: linear-gradient(to right, #4e73df, #1cc88a);
+    color: white;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  }
+  
+  .site-header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+  }
+  
+  .site-header .subtitle {
+    font-size: 1.1rem;
+    opacity: 0.9;
+  }
+  
+  /* Filter Bar */
+  .filter-bar {
+    position: sticky;
+    top: 0;
+    background: white;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    border-bottom: 1px solid #ddd;
+    z-index: 10;
+  }
+  
+  .filter-bar label {
+    font-weight: 600;
+    margin-right: 0.5rem;
+  }
+  
+  .filter-bar select,
+  .filter-bar button {
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+  }
+  
+  .toggle-view button {
+    background: #e9ecef;
+    margin-left: 0.5rem;
+  }
+  
+  .toggle-view .active {
+    background-color: #4e73df;
+    color: white;
+  }
+  
+  /* Main content area */
+  .main-content {
+    max-width: 1200px;
+    margin: auto;
+    padding: 2rem;
+  }
+  
+  .view {
+    display: none;
+  }
+  
+  .view:not(.hidden) {
+    display: block;
+  }
+  
+  #scatterplot,
+  #glucose-line,
+  #date-brush,
+  #nutrient-bars,
+  #glucose-histogram,
+  #glucose-trends {
+    margin-bottom: 2rem;
+    background: white;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+    min-height: 300px;
+  }
+  
+  /* Info panel */
+  #info-panel {
+    margin-top: 2rem;
+    padding: 1rem;
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+  }
+  
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+    background-color: #f1f1f1;
+    color: #666;
+  }

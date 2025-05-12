@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nutrient-Glucose Visualizer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1>Nutrient↔Glucose Visualizer</h1>
+      <p class="subtitle">Understand how your food shapes your glucose.</p>
+    </div>
+  </header>
+
+  <nav class="filter-bar">
+    <label for="person-select">Person:</label>
+    <select id="person-select"></select>
+
+    <label for="nutrient-select">Nutrient:</label>
+    <select id="nutrient-select">
+      <option value="sugar">Sugar</option>
+      <option value="total_carb">Carbohydrates</option>
+      <option value="protein">Protein</option>
+      <option value="total_fat">Fat</option>
+    </select>
+
+    <div class="toggle-view">
+      <button id="nutrient-view-btn" class="active">Nutrient View</button>
+      <button id="time-view-btn">Time View</button>
+    </div>
+  </nav>
+
+  <main class="main-content">
+    <section id="nutrient-view" class="view">
+      <div id="scatterplot"></div>
+      <div id="glucose-line"></div>
+    </section>
+
+    <section id="time-view" class="view hidden">
+      <div id="date-brush"></div>
+      <div id="nutrient-bars"></div>
+      <div id="glucose-histogram"></div>
+      <div id="glucose-trends"></div>
+    </section>
+
+    <aside id="info-panel"></aside>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 NutrientGlucose Project | <a href="#">GitHub</a> | <a href="#">About</a></p>
+  </footer>
+
+  <script>
+    // JS to toggle views
+    const nutrientBtn = document.getElementById('nutrient-view-btn');
+    const timeBtn = document.getElementById('time-view-btn');
+    const nutrientView = document.getElementById('nutrient-view');
+    const timeView = document.getElementById('time-view');
+
+    nutrientBtn.addEventListener('click', () => {
+      nutrientView.classList.remove('hidden');
+      timeView.classList.add('hidden');
+      nutrientBtn.classList.add('active');
+      timeBtn.classList.remove('active');
+    });
+
+    timeBtn.addEventListener('click', () => {
+      timeView.classList.remove('hidden');
+      nutrientView.classList.add('hidden');
+      timeBtn.classList.add('active');
+      nutrientBtn.classList.remove('active');
+    });
+  </script>
+</body>
+</html>
